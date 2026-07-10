@@ -1,27 +1,26 @@
 #!/bin/bash
 
+set -euo pipefail
+shopt -s nullglob
+
 dest=/data/prerolls
-files=()
 sources=(fiverr ivipid priyansh)
 
+repo_root=$(cd "$(dirname "$0")/.." && pwd)
+
+files=()
 for source in "${sources[@]}"
 do
-  for file in ../"${source}"/*
+  for file in "${repo_root}/${source}"/*.mp4
   do
-    f=$(echo "${file}" | cut -d/ -f 2-)
-    files+=("${f}")
+    files+=("${dest}/${source}/$(basename "${file}")")
   done
 done
 
-count=0
-total=$(( ${#files[@]} - 1 ))
+if [[ ${#files[@]} -eq 0 ]]
+then
+  echo "ERROR: no .mp4 files found under ${repo_root}" >&2
+  exit 1
+fi
 
-for file in "${files[@]}"
-do
-  echo -n "${dest}/${file}"
-  if [[ "${count}" -ne "${total}" ]]
-  then
-    echo -n ";"
-    count=$(( count + 1 ))
-  fi
-done
+(IFS=';'; printf '%s\n' "${files[*]}")
