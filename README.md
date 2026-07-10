@@ -4,11 +4,11 @@ A collection of prerolls
 
 ## Layout
 
-| Directory  | Author   | URL                       |
-|------------|----------|---------------------------|
-| `fiverr`   | Fiverr   | https://www.fiverr.com/   |
-| `ivipid`   | ivipid   | https://ivipid.com/       |
-| `priyansh` | Priyansh | https://www.priyansh.net/ |
+| Directory                | Author   | URL                      |
+|--------------------------|----------|--------------------------|
+| [`fiverr`](fiverr/)      | Fiverr   | https://www.fiverr.com   |
+| [`ivipid`](ivipid/)      | ivipid   | https://www.ivipid.com   |
+| [`priyansh`](priyansh/)  | Priyansh | https://www.priyansh.net |
 
 ## Generating the preroll list
 
