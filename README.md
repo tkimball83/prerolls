@@ -13,5 +13,5 @@ A collection of prerolls
 ## Generating the preroll list
 
 ```sh
-bin/list_gen.sh
+bash bin/list_gen.sh
 ```
